@@ -155,7 +155,7 @@ var config = {
             hidden: false,
             title: '',
             image: '',
-            description: '<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>The Jim Crow era has brought many hardships to Black communities across the country. As murder and the destruction of Black-owned businesses fueled by racism persisted throughout the early 1900s, African Americans had to flee communities that were much more racially heterogeneous. These actions led to the establishment of large, segregated Black communities that were served by thriving Black businesses yet still vulnerable to the aggression of neighboring residents. One of the most notable of these attacks took place in 1921 in the Greenwood District of Tulsa, Oklahoma, now better known to the general public as “Black Wall Street.”</span>',
+            description: '<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>The Jim Crow era has brought many hardships to Black communities across the country. Racially restrictive covenants, redlining,  and social pressure from White people that often erupted into violence forced African Americans to leave neighborhoods that were more racially mixed. These actions led to the establishment of large, segregated Black communities that were served by thriving Black businesses yet still vulnerable to the aggression of neighboring residents. One of the most notable of these attacks took place in 1921 in the Greenwood District of Tulsa, Oklahoma, now better known to the general public as “Black Wall Street.”</span>',
             location: {
                 center: [-77.12, 38.902],
                 zoom: 11.1,
@@ -195,7 +195,7 @@ var config = {
             hidden: false,
             title: '',
             image: '',
-            description: "<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>Through the 1960s, DC had experienced an increase of job growth within the U.S. Government, attracting many families and individuals from everywhere in the country. This led many African American men, women, and children to migrate to Washington, DC during the Great Migration era. Although many escaped hardships in the American South, segregation was still deeply rooted in DC's structures. Most of the declining neighborhoods were in the southern portions of the city and most of their inhabitants were Black.</span>",
+            description: "<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>Beginning in the 1930s, DC had experienced an increase of job growth within the U.S. Government, attracting many families and individuals from everywhere in the country. This led many African American men, women, and children to migrate to Washington, DC during the Great Migration era. Although many escaped hardships in the American South, segregation was still deeply rooted in DC's structures. Most of the declining neighborhoods were in the eastern and southern portions of the city.</span>",
             location: {
                 center: [-77.12, 38.902],
                 zoom: 11.1,
@@ -235,7 +235,7 @@ var config = {
             hidden: false,
             title: '',
             image: '',
-            description: "<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>Much of African American commercial life centered around the Shaw, Columbia Heights, and Atlas District neighborhoods. In 1968, the assassination of Dr. Martin Luther King Jr. in Memphis triggered riots that saw the destruction of much of the businesses that encompassed U Street, 14th Street, 9th Street, and 7th Street. Recovery took decades, especially in the Columbia Heights and the U Street Corridor neighborhoods. Metro stations were installed in both areas in the 1990s, paving the way for gentrification in the following decades.</span>",
+            description: "<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>Much of African American commercial life centered around the Shaw, Columbia Heights, and Atlas District neighborhoods. In 1968, the assassination of Dr. Martin Luther King Jr. in Memphis triggered uprisings that saw the destruction of much of the businesses that encompassed U Street, 14th Street, 9th Street, and 7th Street. Recovery took decades, especially in the Columbia Heights and the U Street Corridor neighborhoods. Metro stations were installed in both areas in the 1990s, paving the way for gentrification in the following decades.</span>",
             location: {
                 center: [-77.12, 38.902],
                 zoom: 11.1,
@@ -270,12 +270,12 @@ var config = {
                 }
             ]
         },
-        {   id: 'dc-1968-riots-image',
+        {   id: 'dc-1968-uprisings-image',
             alignment: 'center',
             hidden: false,
             title: '',
-            image: './images/1968-riots.jpg',
-            description: 'Aftermath of the 1968 Washington, DC riots.<cite><p style=line-height:4px;>Source: Library of Congress</cite></p>',
+            image: './images/1968-uprisings.jpg',
+            description: 'Aftermath of the 1968 Washington, DC uprisings.<cite><p style=line-height:4px;>Source: Library of Congress</cite></p>',
             location: {
                 center: [-77.12, 38.902],
                 zoom: 11.1,
@@ -371,7 +371,7 @@ var config = {
             hidden: false,
             title: '',
             image: '',
-            description: "<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>A powerful force that engulfs many US cities, including DC, is <strong style='color:#ba9ad6'>gentrification</strong>. Prior to the COVID-19 pandemic, DC had experienced an influx of more affluent transients into neighborhoods that had primarily been low-to-moderate income areas. According to NCRC's <a href='https://ncrc.org/gentrification/'>Shifting Neighborhoods</a> report, DC was the most gentrified city between 2000 and 2013. It had dropped to 13th place during the 2013-2017 period, but the disparate impacts of the economic and cultural shifts are still felt today. </span><p><cite>For more information on gentrification in DC and other American cities during the 2013-2017 period, check out NCRC's <a href='https://ncrc.org/gentrification20/'>Gentrification & Disinvestment</a> report.</p></cite>",
+            description: "<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;><strong style='color:#ba9ad6'>Gentrification</strong> is a powerful force that engulfs many US cities, including DC. Prior to the COVID-19 pandemic, DC had experienced an influx of more affluent transients into neighborhoods that had primarily been low-to-moderate income areas. According to NCRC's <a href='https://ncrc.org/gentrification/'>Shifting Neighborhoods</a> report, DC was the most gentrified city between 2000 and 2013. It had dropped to 13th place during the 2013-2017 period, but the disparate impacts of the economic and cultural shifts are still felt today. </span><p><cite>For more information on gentrification in DC and other American cities during the 2013-2017 period, check out NCRC's <a href='https://ncrc.org/gentrification20/'>Gentrification & Disinvestment</a> report.</p></cite>",
             location: {
                 center: [-77.12, 38.902],
                 zoom: 11.1,
@@ -860,12 +860,216 @@ var config = {
                 }
             ]
         },
-        {   id: 'culturally-significant-businesses',
+        {   id: 'culturally-significant-businesses-title',
             alignment: 'right',
             hidden: false,
             title: '',
             image: '',
-            description: '<span style=line-height:50px;margin-top:25px;display:block;text-align:center;font-family:Palatino,serif;font-size:50px;margin-top:25px;>CULTURALLY SIGNIFICANT BUSINESSES</span><span style=line-height:40px;margin-top:25px;display:block;text-align:center;font-family:Palatino,serif;font-size:30px;margin-top:25px;><cite>businesses that are focused on their role in the neighborhood as a center of community, the specific services or products which are offered to African Americans, and the affinity of the business for Black patrons - creating a welcoming and comfortable space.</span></cite>',
+            description: '<span style=line-height:50px;margin-top:25px;display:block;text-align:center;font-family:Palatino,serif;font-size:50px;margin-top:25px;>CULTURALLY SIGNIFICANT BUSINESSES</span>',
+            location: {
+                center: [-77.019, 38.918],
+                zoom: 14.5,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'dc-boundary',
+                    opacity: 0
+                },
+
+                {
+                    layer: 'u-street-corridor',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'u-street-main',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'howard-university',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'cultural-businesses',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'dc-boundary',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'u-street-corridor',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'u-street-main',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'howard-university',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'cultural-businesses',
+                    opacity: 1
+                }
+            ]
+        },
+        {   id: 'culturally-significant-businesses-info-1',
+            alignment: 'right',
+            hidden: false,
+            title: '',
+            image: '',
+            description: '<span style=line-height:40px;margin-top:25px;display:block;text-align:center;font-family:Palatino,serif;font-size:30px;margin-top:25px;><cite>Culturally significant establishments are essential to their communities. Their continued presence can offer critical support for well-being by providing access to safe and welcoming spaces for the area residents. These businesses are also crucial to the availability of important, strategic or highly valued goods and services near residents.</span></cite>',
+            location: {
+                center: [-77.019, 38.918],
+                zoom: 14.5,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'dc-boundary',
+                    opacity: 0
+                },
+
+                {
+                    layer: 'u-street-corridor',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'u-street-main',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'howard-university',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'cultural-businesses',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'dc-boundary',
+                    opacity: 0
+                },
+
+                {
+                    layer: 'u-street-corridor',
+                    opacity: 0
+                },
+
+                {
+                    layer: 'u-street-main',
+                    opacity: 0
+                },
+
+                {
+                    layer: 'howard-university',
+                    opacity: 0
+                },
+
+                {
+                    layer: 'cultural-businesses',
+                    opacity: 0
+                }
+            ]
+        },
+        {   id: 'culturally-significant-businesses-info-2',
+            alignment: 'right',
+            hidden: false,
+            title: '',
+            image: '',
+            description: '<span style=line-height:40px;margin-top:25px;display:block;text-align:center;font-family:Palatino,serif;font-size:30px;margin-top:25px;><cite>Cultural significance is determined by a number of overlapping factors including the length of time a business has been present in a community, the importance of the location where the businesses are found, how the particular goods and services offered by the business resonate with customers and community members, the relationships established between entrepreneurs and patrons that result in meaningful and sustained interactions.</span></cite>',
+            location: {
+                center: [-77.019, 38.918],
+                zoom: 14.5,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'dc-boundary',
+                    opacity: 0
+                },
+
+                {
+                    layer: 'u-street-corridor',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'u-street-main',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'howard-university',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'cultural-businesses',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'dc-boundary',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'u-street-corridor',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'u-street-main',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'howard-university',
+                    opacity: 1
+                },
+
+                {
+                    layer: 'cultural-businesses',
+                    opacity: 1
+                }
+            ]
+        },
+        {   id: 'culturally-significant-businesses-info-3',
+            alignment: 'right',
+            hidden: false,
+            title: '',
+            image: '',
+            description: '<span style=line-height:40px;margin-top:25px;display:block;text-align:center;font-family:Palatino,serif;font-size:30px;margin-top:25px;><cite>Broader historical, political, and economic contexts are important determinants of cultural significance - the persistence of inequality and unfairness for businesses and the communities makes Black owned businesses vital symbols of resistance and perseverance.</span></cite>',
             location: {
                 center: [-77.019, 38.918],
                 zoom: 14.5,
