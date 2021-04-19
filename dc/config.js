@@ -1747,12 +1747,12 @@ var config = {
                 
             ]
         },
-        {   id: 'sankofa-books-info-2',
+        {   id: 'sankofa-books-quote',
             alignment: 'center',
             hidden: false,
             title: '',
             image: '',
-            description: '<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>Books for adults and young readers are available from Black authors across the globe in fiction and non-fiction genres. In addition to selling Afrocentric cards and jewelry, Shirikiana and Haile also use their space for community events - allowing scholars, artists, activists and others give presentations or screen films.</span>',
+            description: '<q><strong>The talent that comes through Sankofa is amazing, so that we use it as a place for people to express themselves...These are things all around literature and looking at the past in order to plan a future. All those things are marinating at Sankofa and coming to a nice flavor, we hope, as we cultivate a new generation of people who are steeped in what has been offered to them already in their past, and it was continuing to be offered to them in the present. When they go do something of the future, they are armed, in the best sense of the word.</q></strong><p>- Shirikiana Gerima, <cite>Sankofa Books & Video</cite></p>',
             location: {
                 center: [-77.02313, 38.92558],
                 zoom: 19.04,
@@ -1769,12 +1769,12 @@ var config = {
                 
             ]
         },
-        {   id: 'sankofa-books-quote',
+        {   id: 'sankofa-books-info-2',
             alignment: 'center',
             hidden: false,
             title: '',
             image: '',
-            description: '<q><strong>The talent that comes through Sankofa is amazing, so that we use it as a place for people to express themselves...These are things all around literature and looking at the past in order to plan a future. All those things are marinating at Sankofa and coming to a nice flavor, we hope, as we cultivate a new generation of people who are steeped in what has been offered to them already in their past, and it was continuing to be offered to them in the present. When they go do something of the future, they are armed, in the best sense of the word.</q></strong><p>- Shirikiana Gerima, <cite>Sankofa Books & Video</cite></p>',
+            description: '<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>Books for adults and young readers are available from Black authors across the globe in fiction and non-fiction genres. In addition to selling Afrocentric cards and jewelry, Shirikiana and Haile also use their space for community events - allowing scholars, artists, activists and others give presentations or screen films.</span>',
             location: {
                 center: [-77.02313, 38.92558],
                 zoom: 19.04,
