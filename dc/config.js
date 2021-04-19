@@ -1616,7 +1616,7 @@ var config = {
             ]
         },
         {   id: 'new-image-quote',
-            alignment: 'right',
+            alignment: 'center',
             hidden: false,
             title: '',
             image: '',
