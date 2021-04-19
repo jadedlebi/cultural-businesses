@@ -1615,12 +1615,12 @@ var config = {
                 
             ]
         },
-        {   id: 'new-image-info-2',
-            alignment: 'left',
+        {   id: 'new-image-quote',
+            alignment: 'right',
             hidden: false,
             title: '',
             image: '',
-            description: '<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>Williams’ salon also offered very targeted help with hair loss through her Hair Loss Rejuvenation Clinic. It is these specific kinds of services, as well as the opportunity for patrons to gather in a relatively homogeneous space, that connects this business to culture via the shared needs and practices of the larger Black populace.</span>',
+            description: '<q><strong>My business is very important...Cosmetology is downgraded when they want to say, ‘Hairdressers.’ Hairdressers, we are downgraded. They act as if they do not need it...So, I had these other services to it that will make someone still feel just as good and could walk out with instant results but still be natural. Still be natural...So, that is what I do here.</q></strong><p>- Dr. Acia Williams, <cite>A New Image by Acia</cite></p>',
             location: {
                 center: [-77.02227, 38.91662],
                 zoom: 18.92,
@@ -1637,12 +1637,12 @@ var config = {
                 
             ]
         },
-        {   id: 'new-image-quote',
-            alignment: 'right',
+        {   id: 'new-image-info-2',
+            alignment: 'left',
             hidden: false,
             title: '',
             image: '',
-            description: '<q><strong>My business is very important...Cosmetology is downgraded when they want to say, ‘Hairdressers.’ Hairdressers, we are downgraded. They act as if they do not need it...So, I had these other services to it that will make someone still feel just as good and could walk out with instant results but still be natural. Still be natural...So, that is what I do here.</q></strong><p>- Dr. Acia Williams, <cite>A New Image by Acia</cite></p>',
+            description: '<span style=display:block;text-align:left;font-family:Palatino,serif;font-size:30px;margin-top:25px;font-style:bold;line-height:60px;>Williams’ salon also offered very targeted help with hair loss through her Hair Loss Rejuvenation Clinic. It is these specific kinds of services, as well as the opportunity for patrons to gather in a relatively homogeneous space, that connects this business to culture via the shared needs and practices of the larger Black populace.</span>',
             location: {
                 center: [-77.02227, 38.91662],
                 zoom: 18.92,
