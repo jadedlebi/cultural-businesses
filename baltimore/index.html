@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Culturally Significant Businesses in Baltimore, MD</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <style>
+        body {
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+        }
+        a, a:hover, a:visited {
+            color: #0071bc;
+        }
+        #map {
+            top:0;
+            height: 100vh;
+            width:100vw;
+            position: fixed;
+        }
+        #header {
+            margin: 10vh auto;
+            width: 50vw;
+            position: sticky;
+            text-align: center;
+            padding-bottom: 2vh;
+            padding-top: 2vh;
+            padding-left: 1vh;
+            padding-right: 1vh;
+            opacity: 80%;
+        }
+        #footer {
+            width: 100%;
+            min-height: 5vh;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            text-align: center;
+            line-height: 25px;
+            font-size: 18px;
+            position: relative;
+            z-index: 5;
+        }
+        #features {
+            padding-top: 50vh;
+            padding-bottom: 50vh;
+            z-index: 100;
+        }
+        #place-name {
+            margin-top: -50vh;
+            margin-bottom: 50vh;
+            width: 50vw;
+            text-align: center;
+        }
+        #ncrc-logo {
+            margin-bottom: 70vh;
+            text-align: center;
+            width: 30vw;
+        }
+        #baltimore-subtitle {
+            margin-top: -50vh;
+        }
+        #baltimore-redlining-image {
+            position: sticky;
+            height: 70vh;
+            width: 100vw;
+            opacity: 100%;
+            text-align: center;
+        }
+        #baltimore-redlining-title {
+            position: sticky;
+            margin-top: -110vh;
+            margin-bottom: 100vh;
+            margin-left: 50vw;
+            width: 50vw;
+            text-align: center;
+            opacity: 80%;
+        }
+        #baltimore-redlining-info-1 {
+            width: 45vw;
+            margin: auto 4vh;
+        }
+        #holc-d4-image {
+            width: 45vw;
+            margin-left: 3vw;
+            opacity: 100%;
+            text-align: center;
+        }
+        #baltimore-redlining-info-2 {
+            width: 45vw;
+            margin: auto 4vh;
+        }
+        #baltimore-redlining-info-3 {
+            width: 45vw;
+            margin: auto 4vh;
+        }
+        #baltimore-redlining-info-4 {
+            width: 45vw;
+            margin: auto 4vh;
+        }
+        #baltimore-redlining-info-5 {
+            width: 45vw;
+            margin: auto 4vh;
+        }
+        #svi-info {
+            width: 45vw;
+            margin: auto 4vh;
+        }
+        #life-exp-info {
+            width: 45vw;
+            margin: auto 4vh;
+        }
+        #hide-legend {
+            margin-top: -20vh;
+        }
+        #penn-ave-corridor-title {
+            position: sticky;
+            margin-top: -122vh;
+            margin-bottom: 100vh;
+            margin-left: 50vw;
+            width: 50vw;
+            text-align: center;
+            opacity: 80%;
+        }  
+        #penn-ave-corridor-info {
+            margin-top: -10vh;
+            margin-left: 50vw;
+            width: 45vw;
+        }  
+        #penn-ave-corridor-photo {
+            position: sticky;
+            height: 70vh;
+            width: 100vw;
+            opacity: 100%;
+            text-align: center;
+        }
+        #royal-old-photo {
+            margin-right: 35vw;
+            margin-top: -30vh;
+            width: 60vw;
+            opacity: 100%;
+            text-align: center;
+        }
+        #royal-old-photo-info {
+            margin-left: 65vw;
+            margin-top: -90vh;
+            width: 30vw;
+            opacity: 100%;
+            text-align: center;
+        }
+        #royal-now-photo {
+            margin-left: 35vw;
+            margin-top: -35vh;
+            width: 60vw;
+            opacity: 100%;
+            text-align: center;
+        }
+        #royal-now-photo-info {
+            margin-right: 65vw;
+            margin-top: -100vh;
+            width: 30vw;
+            opacity: 100%;
+            text-align: center;
+        }
+        #culturally-significant-businesses-title {
+            position: sticky;
+            text-align: center;
+            opacity: 80%;
+            margin-bottom: 10vh;
+            margin-top: 40vh;
+        }
+        #culturally-significant-businesses-info-1 {
+            position: sticky;
+            text-align: center;
+            opacity: 80%;
+            margin-top: -50vh;
+        }
+        #culturally-significant-businesses-info-2 {
+            position: sticky;
+            text-align: center;
+            opacity: 80%;
+            margin-top: -50vh;
+        }
+        #culturally-significant-businesses-info-3 {
+            position: sticky;
+            text-align: center;
+            opacity: 80%;
+            margin-top: -50vh;
+            margin-bottom: 50vh;
+        }
+        #avenue-bakery-info {
+            width: 50vw;
+            margin-left: 45vw;
+            margin-top: -65vh;
+        }
+        #avenue-bakery-photo-1 {
+            width: 50vw;
+            margin-left: 45vw;
+            margin-top: -70vh;
+            opacity: 100%;
+        }
+        #avenue-bakery-photo-2 {
+            width: 35vw;
+            margin-left: 5vw;
+            margin-top: -90vh;
+            opacity: 100%;
+        }
+        #avenue-bakery-photo-3 {
+            width: 50vw;
+            margin-right: 5vw;
+            margin-top: -75vh;
+            opacity: 100%;
+        }
+        #avenue-bakery-quote {
+            margin-top: -80vh;
+        }
+        #capital-lounge-title {
+            width: 45vw;
+            margin-top: 50vh;
+        }
+        #capital-lounge-info {
+            width: 40vw;
+            margin-left: 55vw;
+            margin-top: -50vh;
+        }
+        #capital-lounge-photo-1 {
+            margin-top: -95vh;
+            width: 30vw;
+            margin-left: 60vw;
+            opacity: 70%;
+        }
+        #capital-lounge-photo-2 {
+            width: 45vw;
+            margin-right: 52vw;
+            margin-top: -170vh;
+            opacity: 100%;
+        }
+        #capital-lounge-quote {
+            margin-top: -50vh;
+            margin-left: 7vw;
+        }
+        #capital-lounge-photo-3 {
+            width: 45vw;
+            margin-left: 52vw;
+            margin-top: -60vh;
+            opacity: 100%;
+        }
+        #capital-lounge-photo-4 {
+            width: 45vw;
+            margin-right: 52vw;
+            margin-top: -120vh;
+            opacity: 100%;
+        }
+        #cityweeds-bemoregreen-title {
+            width: 40vw;
+            margin-top: 50vh;
+        }
+        #cityweeds-bemoregreen-info {
+            width: 40vw;
+            margin-left: 55vw;
+            margin-top: -80vh;
+        }
+        #cityweeds-bemoregreen-photo-1 {
+            width: 45vw;
+            margin-right: 52vw;
+            margin-top: -150vh;
+            opacity: 100%;
+        }
+        #cityweeds-bemoregreen-quote {
+            margin-top: -50vh;
+        }
+        #cityweeds-bemoregreen-photo-2 {
+            width: 58vw;
+            margin-left: 40vw;
+            margin-top: -155vh;
+            opacity: 100%;
+        }
+        #redd-title {
+            width: 45vw;
+            margin-top: 50vh;
+            margin-left: 52vw;
+        }
+        #redd-info-1 {
+            width: 40vw;
+            margin: auto 4.6vh;
+            margin-top: -65vh;
+            margin-right: 52vw;
+        }
+        #redd-info-2 {
+            width: 40vw;
+            margin: auto 4.6vh;
+            margin-top: -80vh;
+            margin-right: 52vw;
+        }
+        #redd-photo-1 {
+            width: 45vw;
+            margin-left: 52vw;
+            margin-top: -120vh;
+            opacity: 100%;
+        }
+        #redd-quote {
+            margin-top: -50vh;
+            margin-left: 55vw;
+            width: 40vw;
+        }
+        #redd-photo-2 {
+            width: 45vw;
+            margin-left: 52vw;
+            margin-top: -120vh;
+            opacity: 100%;
+        }
+        #redd-photo-3 {
+            width: 45vw;
+            margin-right: 52vw;
+            margin-top: -70vh;
+            opacity: 100%;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+        .centered {
+            width: 50vw;
+            margin: 0 auto;
+        }
+        .lefty {
+            width: 33vw;
+            margin-left: 5vw;
+        }
+        .righty {
+            width: 33vw;
+            margin-left: 62vw;
+        }
+        .fully {
+            width: 100%;
+            margin: auto;
+        }
+        .light {
+            color: #444;
+            background-color: #fafafa;
+        }
+        .dark {
+            color: #fafafa;
+            background-color: #444;
+            opacity: 90%;
+        }
+        .step {
+            padding-bottom: 50vh;
+            margin-bottom: 10vh;
+            opacity: 0.9;
+        }
+        .step.active {
+            opacity: 0.9;
+        }
+
+        .step div {
+            padding:  25px 50px;
+            line-height: 25px;
+            font-size: 18px;
+            font-family:Palatino,serif;
+        }
+
+        .step img {
+            width: 100%;
+        }
+        .q {
+            font-size: 40px;
+        }
+
+        @media (max-width: 750px) {
+            .centered, .lefty, .righty, .fully {
+                width: 90vw;
+                margin: 0 auto;
+            }
+        }
+
+        .legend1 {
+          position: fixed;
+          right: 60px;
+          bottom: 30px;
+          height: 115px;
+          background-color: rgba(48, 47, 47, .9);
+          font-family: "Gill Sans MT";
+          font-size: 14px;
+          color: white;
+          padding: 2px;
+          z-index: 1;
+          display: none;
+        }
+
+        .legend1 div span {
+          border-radius: 50%;
+          display: inline-block;
+          height: 10px;
+          width: 10px;
+          margin-right: 10px;
+          margin-left: 5px;
+        }
+
+        .legend2 {
+          position: fixed;
+          right: 60px;
+          bottom: 30px;
+          height: 95px;
+          background-color: rgba(48, 47, 47, .9);
+          font-family: "Gill Sans MT";
+          font-size: 14px;
+          color: white;
+          padding: 2px;
+          z-index: 1;
+          display: none;
+        }
+
+        .legend2 div span {
+          border-radius: 0%;
+          display: inline-block;
+          height: 10px;
+          width: 40px;
+        }
+
+        /* Fix issue on mobile browser where scroll breaks  */
+        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan, 
+        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
+            touch-action: unset;
+        }
+
+        </style>
+</head>
+
+
+<body>
+
+<div id="map"></div>
+<div id="story"></div>
+
+<div id='MinorityLegend' class='legend1'>
+    <h4 style= 'line-height: 1px; text-align: center;margin-left:5px;margin-right:5px;'>Minority Population</h4>
+        <div><span style='background-color: #959aab'></span>Less than 10%</div>
+        <div><span style='background-color: #5d688e'></span>10 - 24.9%</div>
+        <div><span style='background-color: #324173'></span>25 - 49.9%</div>
+        <div><span style='background-color: #04113d'></span>Above 50%</div>
+</div>
+
+<div id='HOLCLegend' class='legend1'>
+    <h4 style= 'line-height: 1px; text-align: center;margin-left:5px;margin-right:5px;'>HOLC Grade</h4>
+        <div><span style='background-color: #749f56'></span>A - "Best"</div>
+        <div><span style='background-color: #4d8093'></span>B - "Still Desirable"</div>
+        <div><span style='background-color: #b6ab6d'></span>C - "Definitely Declining"</div>
+        <div><span style='background-color: #b66363'></span>D - "Hazardous"</div>
+</div>
+
+<div id='HRSLegend' class='legend1'>
+    <h4 style= 'line-height: 1px; text-align: center;margin-left:5px;margin-right:5px;'>Historic Redlining Score</h4>
+        <div><span style='background-color: #749f56'></span>Low (Q1)</div>
+        <div><span style='background-color: #4d8093'></span>Medium (Q2)</div>
+        <div><span style='background-color: #b6ab6d'></span>High (Q3)</div>
+        <div><span style='background-color: #b66363'></span>Very High (Q4)</div>
+</div>
+
+<div id='SVILegend' class='legend2'>
+    <h4 style= 'line-height: 1px; text-align: center;margin-left:5px;margin-right:5px;'>Social Vulnerability Index</h4>
+        <div><span style='background-color: #367840'></span>
+             <span style='background-color: #e6c47a'></span>
+             <span style='background-color: #b6492d'></span>
+             <span style='background-color: #a71b1b'></span>
+        </div>
+        <div><span style='text-align: center'>0.00</span>
+             <span style='text-align: center'></span>
+             <span style='text-align: center'></span>
+             <span style='text-align: center'>1.00</span>
+        </div>
+        <div><span style='text-align: center'>(Low)</span>
+             <span style='text-align: center'></span>
+             <span style='text-align: center'></span>
+             <span style='text-align: center'>(High)</span>
+        </div>
+</div>
+
+<div id='LELegend' class='legend1'>
+    <h4 style= 'line-height: 1px; text-align: center;margin-left:5px;margin-right:5px;'>Life Expectancy (Years)</h4>
+        <div><span style='background-color: #f5f9f9'></span>Below 70.3</div>
+        <div><span style='background-color: #b7d7d6'></span>70.3 - 73.7</div>
+        <div><span style='background-color: #5e9796'></span>73.8 - 76.7</div>
+        <div><span style='background-color: #234d4c'></span>Above 76.7</div>
+</div>
+
+<script src="./config.js"></script>
+<script>
+var layerTypes = {
+    'fill': ['fill-opacity'],
+    'line': ['line-opacity'],
+    'circle': ['circle-opacity', 'circle-stroke-opacity'],
+    'symbol': ['icon-opacity', 'text-opacity'],
+    'raster': ['raster-opacity'],
+    'fill-extrusion': ['fill-extrusion-opacity'],
+    'heatmap': ['heatmap-opacity']
+}
+
+var alignments = {
+    'left': 'lefty',
+    'center': 'centered',
+    'right': 'righty',
+    'full': 'fully'
+}
+
+function getLayerPaintType(layer) {
+    var layerType = map.getLayer(layer).type;
+    return layerTypes[layerType];
+}
+
+function setLayerOpacity(layer) {
+    var paintProps = getLayerPaintType(layer.layer);
+    paintProps.forEach(function(prop) {
+        var options = {};
+        if (layer.duration) {
+            var transitionProp = prop + "-transition";
+            options = { "duration": layer.duration };
+            map.setPaintProperty(layer.layer, transitionProp, options);
+        }
+        map.setPaintProperty(layer.layer, prop, layer.opacity, options);
+    });
+}
+
+// legend customizations
+var legend1 = document.getElementById('MinorityLegend','HOLCLegend','HRSLegend','LELegend');
+var legend2 = document.getElementById('SVILegend');
+var legend3 = document.getElementById('HOLCLegend');
+var legend4 = document.getElementById('HRSLegend');
+var legend5 = document.getElementById('LELegend');
+function hideLegend() {
+  legend1.style.display = 'none';
+  legend2.style.display = 'none';
+  legend3.style.display = 'none';
+  legend4.style.display = 'none';
+  legend5.style.display = 'none';
+}
+function showLegend1() {
+  legend1.style.display = 'block';
+  legend2.style.display = 'none';
+  legend3.style.display = 'none';
+  legend4.style.display = 'none';
+  legend5.style.display = 'none';
+}
+function showLegend2() {
+  legend1.style.display = 'none';
+  legend2.style.display = 'block';
+  legend3.style.display = 'none';
+  legend4.style.display = 'none';
+  legend5.style.display = 'none';
+}
+function showLegend3() {
+  legend1.style.display = 'none';
+  legend2.style.display = 'none';
+  legend3.style.display = 'block';
+  legend4.style.display = 'none';
+  legend5.style.display = 'none';
+}
+function showLegend4() {
+  legend1.style.display = 'none';
+  legend2.style.display = 'none';
+  legend3.style.display = 'none';
+  legend4.style.display = 'block';
+  legend5.style.display = 'none';
+}
+function showLegend5() {
+  legend1.style.display = 'none';
+  legend2.style.display = 'none';
+  legend3.style.display = 'none';
+  legend4.style.display = 'none';
+  legend5.style.display = 'block';
+}
+
+var story = document.getElementById('story');
+var features = document.createElement('div');
+features.setAttribute('id', 'features');
+
+var header = document.createElement('div');
+
+if (config.title) {
+    var titleText = document.createElement('h1');
+    titleText.innerText = config.title;
+    titleText.setAttribute("style", "display:block;font-family:Helvetica,serif;font-size:120px;margin-top:25px;margin-bottom:40px;line-height:120px;");
+    header.appendChild(titleText);
+}
+
+if (config.subtitle) {
+    var subtitleText = document.createElement('h2');
+    subtitleText.innerText = config.subtitle;
+    subtitleText.setAttribute("style", "display:inline;background-color:#CFCFCF; opacity:0.95; color:#000000; font-family:Palatino Linotype, serif; font-size:36px; font-style:italic; line-height:65px; margin-top:30px; margin-bottom:10px;");
+    header.appendChild(subtitleText);
+}
+
+if (config.byline) {
+    var bylineText = document.createElement('p');
+    bylineText.innerText = config.byline;
+    bylineText.setAttribute("style", "text-align:center; font-family:Open Sans,sans-serif; font-size:24px; opacity:0.9; line-height:55px;");
+    header.appendChild(bylineText);
+}
+
+if (header.innerText.length > 0) {
+    header.classList.add(config.theme);
+    header.setAttribute('id', 'header');
+    story.appendChild(header);
+}
+
+config.chapters.forEach((record, idx) => {
+    var container = document.createElement('div');
+    var chapter = document.createElement('div');
+
+    if (record.title) {
+        var title = document.createElement('h3');
+        title.innerText = record.title;
+        title.setAttribute("style","font-family:Helvetica,serif; font-size:30px;");
+        chapter.appendChild(title);
+    }
+
+    if (record.image) {
+        var image = new Image();
+        image.src = record.image;
+        chapter.appendChild(image);
+    }
+
+    if (record.description) {
+        var story = document.createElement('p');
+        story.innerHTML = record.description;
+        chapter.appendChild(story);
+    }
+
+    container.setAttribute('id', record.id);
+    container.classList.add('step');
+    if (idx === 0) {
+        container.classList.add('active');
+    }
+
+    chapter.classList.add(config.theme);
+    container.appendChild(chapter);
+    container.classList.add(alignments[record.alignment] || 'centered');
+    if (record.hidden) {
+        container.classList.add('hidden');
+    }
+    features.appendChild(container);
+});
+
+story.appendChild(features);
+
+var footer = document.createElement('div');
+
+if (config.footer) {
+    var footerText = document.createElement('p');
+    footerText.innerHTML = config.footer;
+    footer.appendChild(footerText);
+}
+
+if (footer.innerText.length > 0) {
+    footer.classList.add(config.theme);
+    footer.setAttribute('id', 'footer');
+    story.appendChild(footer);
+}
+
+mapboxgl.accessToken = config.accessToken;
+
+const transformRequest = (url) => {
+    const hasQuery = url.indexOf("?") !== -1;
+    const suffix = hasQuery ? "&pluginName=scrollytellingV2" : "?pluginName=scrollytellingV2";
+    return {
+      url: url + suffix
+    }
+}
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: config.style,
+    center: config.chapters[0].location.center,
+    zoom: config.chapters[0].location.zoom,
+    bearing: config.chapters[0].location.bearing,
+    pitch: config.chapters[0].location.pitch,
+    interactive: false,
+    transformRequest: transformRequest
+});
+
+if (config.showMarkers) {
+    var marker = new mapboxgl.Marker({ color: config.markerColor });
+    marker.setLngLat(config.chapters[0].location.center).addTo(map);
+}
+
+// instantiate the scrollama
+var scroller = scrollama();
+
+map.on("load", function() {
+    if (config.use3dTerrain) {
+        map.addSource('mapbox-dem', {
+            'type': 'raster-dem',
+            'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+            'tileSize': 512,
+            'maxzoom': 14
+        });
+        // add the DEM source as a terrain layer with exaggerated height
+        map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+
+        // add a sky layer that will show when the map is highly pitched
+        map.addLayer({
+            'id': 'sky',
+            'type': 'sky',
+            'paint': {
+                'sky-type': 'atmosphere',
+                'sky-atmosphere-sun': [0.0, 0.0],
+                'sky-atmosphere-sun-intensity': 15
+            }
+        });
+    };
+
+    // setup the instance, pass callback functions
+    scroller
+    .setup({
+        step: '.step',
+        offset: 0.5,
+        progress: true
+    })
+    .onStepEnter(response => {
+        var chapter = config.chapters.find(chap => chap.id === response.element.id);
+        response.element.classList.add('active');
+        map[chapter.mapAnimation || 'flyTo'](chapter.location);
+        if (config.showMarkers) {
+            marker.setLngLat(chapter.location.center);
+        }
+        if (chapter.onChapterEnter.length > 0) {
+            chapter.onChapterEnter.forEach(setLayerOpacity);
+        }
+        if (chapter.callback) {
+            window[chapter.callback]();
+        }
+        if (chapter.rotateAnimation) {
+            map.once('moveend', function() {
+                const rotateNumber = map.getBearing();
+                map.rotateTo(rotateNumber + 90, {
+                    duration: 24000, easing: function (t) {
+                        return t;
+                    }
+                });
+            });
+        }
+    })
+    .onStepExit(response => {
+        var chapter = config.chapters.find(chap => chap.id === response.element.id);
+        response.element.classList.remove('active');
+        if (chapter.onChapterExit.length > 0) {
+            chapter.onChapterExit.forEach(setLayerOpacity);
+        }
+    });
+});
+
+// setup resize event
+window.addEventListener('resize', scroller.resize);
+
+</script>
+
+</body>
+</html>
