@@ -59,6 +59,7 @@
         #ncrc-logo {
             margin-bottom: 70vh;
             text-align: center;
+            width: 30vw;
         }
         #dc-subtitle {
             margin-top: -50vh;
@@ -549,7 +550,7 @@ var header = document.createElement('div');
 if (config.title) {
     var titleText = document.createElement('h1');
     titleText.innerText = config.title;
-    titleText.setAttribute("style", "display:block;font-family:Palatino Linotype,serif;font-size:140px;margin-top:25px;font-style:italic;margin-bottom:40px;line-height:150px;");
+    titleText.setAttribute("style", "display:block;font-family:Helvetica,serif;font-size:120px;margin-top:25px;margin-bottom:40px;line-height:120px;");
     header.appendChild(titleText);
 }
 
@@ -580,7 +581,7 @@ config.chapters.forEach((record, idx) => {
     if (record.title) {
         var title = document.createElement('h3');
         title.innerText = record.title;
-        title.setAttribute("style","font-family:Palatino Linotype,serif; font-size:30px;");
+        title.setAttribute("style","font-family:Helvetica,serif; font-size:30px;");
         chapter.appendChild(title);
     }
 
