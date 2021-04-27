@@ -97,9 +97,9 @@ var config = {
         {   id: 'baltimore-redlining-image',
             alignment: 'center',
             hidden: false,
-            title: '',
+            title: 'https://www.flickr.com/photos/ssave/7076761729',
             image: './images/baltimore-redlining-title.jpg',
-            description: 'Foster Avenue and the old cork factory in Baltimore (1965). <cite><p style=line-height:4px;>Photo by George Lane on Flickr</cite></p>',
+            description: 'Foster Avenue and the old cork factory in Baltimore (1965). <cite><p style=line-height:4px;>Photo by George Lane via <a href="https://www.flickr.com/photos/ssave/with/7076761729/">Flickr</a></cite></p>',
             location: {
                 center: [-76.62, 39.29],
                 zoom: 11.8,
@@ -342,7 +342,7 @@ var config = {
             hidden: false,
             title: '',
             image: './images/holc-d4.jpg',
-            description: "HOLC Examiner's notes of the redlined area that received a 'D' grade in West Baltimore (1937). <cite><p style=line-height:4px;>Photo from University of Richmond's <a href='https://dsl.richmond.edu/panorama/redlining/#loc=12/39.301/-76.709&city=baltimore-md&area=D4&adimage=3/63.899/-146.426'>Mapping Inequality</a> project.</cite></p>",
+            description: "HOLC Examiner's notes of the redlined area that received a 'D' grade in West Baltimore (1937). <cite><p style=line-height:20px;>Photo and map data obtained from University of Richmond's <a href='https://dsl.richmond.edu/panorama/redlining/#loc=12/39.301/-76.709&city=baltimore-md&area=D4&adimage=3/63.899/-146.426'>Mapping Inequality</a> project.</cite></p>",
             location: {
                 center: [-76.76, 39.29401],
                 zoom: 11,
@@ -672,7 +672,7 @@ var config = {
             hidden: false,
             title: '',
             image: './images/penn-1700.jpg',
-            description: 'Businesses along the 1700 block of Pennsylvania Avenue in Baltimore.<cite><p style=line-height:4px;>Photo by Eli Pousson of Baltimore Heritage</cite></p>',
+            description: 'Businesses along the 1700 block of Pennsylvania Avenue in Baltimore.<cite><p style=line-height:4px;>Photo by Eli Pousson of Baltimore Heritage via <a href="https://www.flickr.com/photos/baltimoreheritage/27070697227">Flickr</a></cite></p>',
             location: {
                 center: [-76.62, 39.29],
                 zoom: 11.8,
@@ -905,7 +905,7 @@ var config = {
             hidden: false,
             title: '',
             image: '',
-            description: 'Royal Theater, Baltimore (1939).<cite><p style=line-height:4px;>Photo courtesy of Theatre Talks on Tumblr</cite></p>',
+            description: 'Royal Theater, Baltimore (1939).<cite><p style=line-height:4px;>Photo by Theatre Talks via <a href="https://theatretalks.tumblr.com/post/6908148633/ralph-cooper-at-the-royal-theatre-baltimore">Tumblr</a></cite></p>',
             location: {
                 center: [-76.625, 39.30776],
                 zoom: 13.62,
@@ -981,7 +981,7 @@ var config = {
             hidden: false,
             title: '',
             image: '',
-            description: 'Royal Theater Marquee Plaza, 1329 Pennsylvania Avenue, Baltimore.<cite><p style=line-height:4px;>Photo by Eli Pousson of Baltimore Heritage</cite></p>',
+            description: 'Royal Theater Marquee Plaza, 1329 Pennsylvania Avenue, Baltimore.<cite><p style=line-height:20px;>Photo by Eli Pousson of Baltimore Heritage via <a href="https://www.flickr.com/photos/baltimoreheritage/26656795258">Flickr</a></cite></p>',
             location: {
                 center: [-76.625, 39.30776],
                 zoom: 13.62,
