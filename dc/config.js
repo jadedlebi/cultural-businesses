@@ -275,7 +275,7 @@ var config = {
             hidden: false,
             title: '',
             image: './images/1968-uprisings.jpg',
-            description: 'Aftermath of the 1968 Washington, D.C. uprisings.<cite><p style=line-height:4px;>Source: Library of Congress</cite></p>',
+            description: 'Aftermath of the 1968 Washington, D.C. uprisings.<cite><p style=line-height:4px;>Photo obtained from the <a href="https://www.loc.gov/pictures/item/2003688168/">Library of Congress</a></cite></p>',
             location: {
                 center: [-77.12, 38.902],
                 zoom: 11.1,
@@ -315,7 +315,7 @@ var config = {
             hidden: false,
             title: '',
             image: './images/u-street-now.png',
-            description: 'Murals and new restaurants line the U Street Corridor.<cite><p style=line-height:4px;>Photo by Mike Maguire</cite></p>',
+            description: 'Murals and new restaurants line the U Street Corridor.<cite><p style=line-height:4px;>Photo by Mike Maguire via <a href="https://www.flickr.com/photos/mikespeaks/49155765983">Flickr</a></cite></p>',
             location: {
                 center: [-77.12, 38.902],
                 zoom: 11.1,
@@ -412,7 +412,7 @@ var config = {
             hidden: false,
             title: '',
             image: './images/dc-displacement.jpg',
-            description: 'New "luxury" apartment buildings being built next to older recently-occupied buildings near the intersection of V Street & Vermont Avenue.<cite><p style=line-height:4px;>Credit: Ted Eytan</cite></p>',
+            description: 'New "luxury" apartment buildings being built next to older recently-occupied buildings near the intersection of V Street & Vermont Avenue.<cite><p style=line-height:4px;>Photo by Ted Eytan via <a href="https://www.flickr.com/photos/taedc/26378915276/">Flickr</a></cite></p>',
             location: {
                 center: [-77.12, 38.902],
                 zoom: 11.1,
@@ -553,7 +553,7 @@ var config = {
             hidden: false,
             title: '',
             image: './images/u-street-pano.jpg',
-            description: 'Street-view of the U Street Corridor facing towards Georgia Avenue.<cite><p style=line-height:4px;>Photo by Ted Eytan</cite></p>',
+            description: 'Street-view of the U Street Corridor facing towards Georgia Avenue.<cite><p style=line-height:4px;>Photo by Ted Eytan via <a href="https://www.flickr.com/photos/22526649@N03/50258343683/">Flickr</a></cite></p>',
             location: {
                 center: [-77.12, 38.902],
                 zoom: 10.7,
@@ -629,7 +629,7 @@ var config = {
             hidden: false,
             title: '',
             image: './images/duke-ellington.jpg',
-            description: 'Still of Duke Ellington leading his orchestra in New York City (1944).<cite><p style=line-height:4px;>Source: Library of Congress</cite></p>',
+            description: 'Still of Duke Ellington leading his orchestra in New York City (1944).<cite><p style=line-height:4px;>Photo obtained from the <a href="https://www.loc.gov/pictures/item/2017851482/">Library of Congress</a></cite></p>',
             location: {
                 center: [-77.019, 38.918],
                 zoom: 14.5,
@@ -796,8 +796,8 @@ var config = {
             alignment: 'center',
             hidden: false,
             title: '',
-            image: './images/howard-u.png',
-            description: "A view of Howard University's Founders Library from the Yard, dedicated in 1939 and designed by architect Albert I. Cassell.<cite><p style=line-height:4px;>Source: Office of University Communications, Howard University</cite></p>",
+            image: './images/howard-u.jpg',
+            description: "A view of Howard University's Founders Library from the Yard, dedicated in 1939 and designed by architect Albert I. Cassell.<cite><p style=line-height:4px;>Photo by Derek E. Morton via <a href='https://commons.wikimedia.org/wiki/File:Howard_University_Washington_DC_-_Founders_Library.jpg'>Wikimedia Commons</a></cite></p>",
             location: {
                 center: [-77.019, 38.918],
                 zoom: 14.5,
