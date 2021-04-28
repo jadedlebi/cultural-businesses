@@ -8,7 +8,7 @@ var config = {
     title: 'Culturally Significant Businesses',
     subtitle: '',
     byline: '',
-    footer: '<p style=font-size:20px;line-height:10px>Produced in collaboration with Dr. Sabiyha Prince.</p><p style=font-size:15px;line-height:8px>Photos provided by <cite>The Avenue Bakery</cite>, <cite>Capital Lounge</cite>, <cite>City Weeds & BeMore Green</cite>, and <cite>Redd Funeral Services</cite> used with permission.</p>',
+    footer: '<p style=font-size:20px;line-height:10px>Produced by <a href="mailto:jedlebi@ncrc.org">Jad Edlebi</a> in collaboration with <a href="mailto:sabiyha.robin@gmail.com">Dr. Sabiyha Prince</a>.</p><p style=font-size:15px;line-height:8px>Photos provided by <cite>The Avenue Bakery</cite>, <cite>Capital Lounge</cite>, <cite>City Weeds & BeMore Green</cite>, and <cite>Redd Funeral Services</cite> used with permission.</p>',
     chapters: [
         {   id: 'place-name',
             alignment: 'center',
