@@ -6,7 +6,7 @@ var config = {
     theme: 'dark',
     use3dTerrain: false,
     title: 'Culturally Significant Businesses',
-    subtitle: '',
+    subtitle: "Based on NCRC's <a href='https://ncrc.org/the-covid-pandemic-and-its-impacts-on-culturally-significant-businesses/''>The COVID Pandemic And Its Impacts On Culturally-Significant Businesses</a> report.",
     byline: '',
     footer: '<p style=font-size:20px;line-height:10px>Produced by <a href="mailto:jedlebi@ncrc.org">Jad Edlebi</a> in collaboration with <a href="mailto:sabiyha.robin@gmail.com">Dr. Sabiyha Prince</a>.</p><p style=font-size:15px;line-height:8px>Photos provided by <cite>The Avenue Bakery</cite>, <cite>Capital Lounge</cite>, <cite>City Weeds & BeMore Green</cite>, and <cite>Redd Funeral Services</cite> used with permission.</p>',
     chapters: [
