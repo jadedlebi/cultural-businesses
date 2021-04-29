@@ -51,7 +51,7 @@
             z-index: 100;
         }
         #place-name {
-            margin-top: -50vh;
+            margin-top: -55vh;
             margin-bottom: 50vh;
             width: 50vw;
             text-align: center;
@@ -588,8 +588,8 @@ if (config.title) {
 
 if (config.subtitle) {
     var subtitleText = document.createElement('h2');
-    subtitleText.innerText = config.subtitle;
-    subtitleText.setAttribute("style", "display:inline;background-color:#CFCFCF; opacity:0.95; color:#000000; font-family:Palatino Linotype, serif; font-size:36px; font-style:italic; line-height:65px; margin-top:30px; margin-bottom:10px;");
+    subtitleText.innerHTML = config.subtitle;
+    subtitleText.setAttribute("style", "display:inline;background-color:#CFCFCF; opacity: 1; color:#000000; font-family:Helvetica, serif; font-size:20px; font-style: italic; line-height:25px; margin-top:30px; margin-bottom:10px;");
     header.appendChild(subtitleText);
 }
 
